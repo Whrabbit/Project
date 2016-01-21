@@ -1,0 +1,27 @@
+import pygame
+
+pygame.init()
+
+width   =   1000
+height  =   1000
+
+
+surface = pygame.display.set_mode((width,height))
+pygame.display.set_caption('Survivor')
+clock = pygame.time.Clock()
+
+
+start = False                                        #2 reasons why the game would stop, for example: if you lose & if you quit the game
+
+while not start:
+
+    for event in pygame.event.get():                #this function reads the "events" that are made and makes a list, like where are you pointing with your mouse at
+        if event.type == pygame.QUIT:               #QUIT function will recognize when you want to close the window and shuts itself off
+            start = True                            #Makes possible to "escape" the loop
+        print (event)
+
+    pygame.display.update()
+    clock.tick(60)                                  #clock.tick is for the smoothness of the frames, in this case 60
+
+pygame.quit()
+quit()
