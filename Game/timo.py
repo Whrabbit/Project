@@ -13,11 +13,8 @@ red = (150,0,0)
 green = (0,150,0)
 brightred = (255,0,0)
 brightgreen = (0,255,0)
-
-block_color = (53,115,255)
-
-car_width = 73
-
+blue = (0,0,150)
+brightblue = (0,0,255)
 
 gameDisplay = pygame.display.set_mode((display_width,display_height))
 pygame.display.set_caption('survivor')
@@ -34,11 +31,9 @@ def message_display(text):
     TextSurf, TextRect = text_objects(text, largeText)
     TextRect.center = ((display_width/2),(display_height/2))
     gameDisplay.blit(TextSurf, TextRect)
-
     pygame.display.update()
 
-    time.sleep(2)
-
+#creating the buttons
 def button(msg,x,y,w,h,ic,ac):
     mouse = pygame.mouse.get_pos()
     click = pygame.mouse.get_pressed()
@@ -51,6 +46,8 @@ def button(msg,x,y,w,h,ic,ac):
     else:
         pygame.draw.rect(gameDisplay, ic,(x,y,w,h))
 
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#
+#FunctionThatsCurrentlyNotBeingUsed
 #def action (str):
     #if action == ("quitgame"):
         #(
@@ -61,17 +58,16 @@ def button(msg,x,y,w,h,ic,ac):
         #print("lets find some friends and play")
         #)
 
-#textinbuttonnotworkin
+#textinbutton
         smallText = pygame.font.Font("freesansbold.ttf",20)
         textSurf, textRect = text_objects(msg, smallText)
         textRect.center = ((x+(w/2)),(y+(h/2)))
         gameDisplay.blit(textSurf, textRect)
         pygame.display.update()
 
+#RunStartingScreen
 def game_intro():
-
     intro = True
-
     while intro:
         for event in pygame.event.get():
             print(event)
@@ -88,11 +84,16 @@ def game_intro():
         TextRect.center = ((display_width/2),(display_height/2))
         gameDisplay.blit(TextSurf, TextRect)
 
-        button("GO!",150,450,100,50,green,brightgreen)
-        button("Quit",550,450,100,50,red,brightred)
+#defining the buttons
+        button("Start Game",150,450,150,50,green,brightgreen)
+        button("Instructions",350,100,150,50,blue,brightblue)
+        button("Quit Game",550,450,150,50,red,brightred)
+
+#defining how many teams per second the screen should get updated
         pygame.display.update()
         clock.tick(60)
 
+#defining the variables
 game_intro()
 pygame.quit()
 quit()
