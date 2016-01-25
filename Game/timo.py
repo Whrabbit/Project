@@ -46,18 +46,6 @@ def button(msg,x,y,w,h,ic,ac):
     else:
         pygame.draw.rect(gameDisplay, ic,(x,y,w,h))
 
-#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#
-#FunctionThatsCurrentlyNotBeingUsed
-#def action (str):
-    #if action == ("quitgame"):
-        #(
-        #print("heyhoy")
-        #)
-    #elif action("playgame"):
-        #(
-        #print("lets find some friends and play")
-        #)
-
 #textinbutton
         smallText = pygame.font.Font("freesansbold.ttf",20)
         textSurf, textRect = text_objects(msg, smallText)
@@ -94,3 +82,16 @@ def main_menu():
 main_menu()
 pygame.quit()
 quit()
+
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#
+#FunctionThatsCurrentlyNotBeingUsed
+#def action (str):
+    #if action == ("quitgame"):
+        #(
+        #print("heyhoy")
+        #)
+    #elif action("playgame"):
+        #(
+        #print("lets find some friends and play")
+        #)
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#
