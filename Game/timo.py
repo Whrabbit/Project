@@ -1,12 +1,13 @@
+#importing everything
 import pygame
 import time
-import sys
-sys.setrecursionlimit(10000)
 pygame.init()
 
+#defining display resolutions
 display_width = 800
 display_height = 600
 
+#defining the colors
 black = (0,0,0)
 white = (255,255,255)
 red = (150,0,0)
@@ -37,7 +38,6 @@ def message_display(text):
 def button(msg,x,y,w,h,ic,ac):
     mouse = pygame.mouse.get_pos()
     click = pygame.mouse.get_pressed()
-    print(click)
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
         pygame.draw.rect(gameDisplay, ac,(x,y,w,h))
         if click[0] == 1:
@@ -63,18 +63,15 @@ def button(msg,x,y,w,h,ic,ac):
         textSurf, textRect = text_objects(msg, smallText)
         textRect.center = ((x+(w/2)),(y+(h/2)))
         gameDisplay.blit(textSurf, textRect)
-        pygame.display.update()
 
 #RunStartingScreen
-def game_intro():
+def main_menu():
     intro = True
     while intro:
         for event in pygame.event.get():
-            print(event)
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-
         #making the display white
         gameDisplay.fill(white)
         #getting the font
@@ -94,6 +91,6 @@ def game_intro():
         clock.tick(60)
 
 #defining the variables
-game_intro()
+main_menu()
 pygame.quit()
 quit()
