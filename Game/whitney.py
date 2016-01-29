@@ -2,7 +2,7 @@ import random
 min = 1
 max = 6
 
-roll= "yes"
+roll = int
 
 while roll:
     print (random.randint(min, max))
