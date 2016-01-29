@@ -2,9 +2,8 @@ import random
 min = 1
 max = 6
 
-roll_again = "yes"
+roll= "yes"
 
-while roll_again == "yes":
+while roll:
     print (random.randint(min, max))
-
-    roll_again = input("Roll the dices again?")
+    break
