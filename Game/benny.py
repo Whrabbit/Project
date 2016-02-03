@@ -50,7 +50,7 @@ def playbutton(msg,x,y,w,h,ic,ac):
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
         pygame.draw.rect(screen, ac, (x,y,w,h))
         if click[0] == 1:
-            print("playgame!")
+            # THIS ONE SHOULD BE CHANGED TO MAKE A NEW SCREEN
     else:
         pygame.draw.rect(screen, ic,(x,y,w,h))
         smallText = pygame.font.Font("freesansbold.ttf",20)
@@ -64,7 +64,7 @@ def instructionsbutton(msg,x,y,w,h,ic,ac):
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
         pygame.draw.rect(screen, ac, (x,y,w,h))
         if click[0] == 1:
-            print("instructions")
+            # THIS ONE SHOULD BE CHANGED TO MAKE A NEW SCREEN
     else:
         pygame.draw.rect(screen, ic,(x,y,w,h))
         smallText = pygame.font.Font("freesansbold.ttf",20)
@@ -83,7 +83,7 @@ while start:
     survivor(x, y)
 
     largeText = pygame.font.Font('freesansbold.ttf',75)
-    TextSurf, TextRect = text_objects("", largeText)
+    TextSurf, TextRect = text_objects(" ", largeText)
     TextRect.center = ((width/2),(height/3))
     screen.blit(TextSurf, TextRect)
 
