@@ -1,33 +1,101 @@
 import pygame
 
 pygame.init()
+width, height = 1000, 800
 
-class window():
-    def __init__(self, screen, bg_color=(255,255,255)):
+screen = pygame.display.set_mode((width, height))
+pygame.display.set_caption('Survivor')
 
-        self.screen = screen
-        self.bg_color = bg_color
-        self.clock = pygame.time.Clock()
+black = (0,0,0)
+white = (255,255,255)
+red = (240,85,0)
+green = (85,240,0)
+brightred = (255,85,0)
+brightgreen = (85,255,0)
+blue = (0,85,240)
+brightblue = (0,85,255)
 
-    def run(self):
+clock = pygame.time.Clock()
+start = True
+survivor_logo = pygame.image.load('/Users/Benny/Desktop/survivor.png')
+#########################################
+def survivor(x, y):
+    screen.blit(survivor_logo,(x,y))
 
-        loop = False
+x = (width * 0.07)
+y = (height * 0.30)
+#########################################
+def text_objects(text, font):
+    textSurface = font.render(text, True, black)
+    return textSurface, textSurface.get_rect()
 
-        while not loop:
-            self.clock.tick(60)                      #clock.tick is for the smoothness of the frames, in this case 60
+def quitbutton(msg,x,y,w,h,ic,ac):
+    mouse = pygame.mouse.get_pos()
+    click = pygame.mouse.get_pressed()
+    if x+w > mouse[0] > x and y+h > mouse[1] > y:
+        pygame.draw.rect(screen, ac, (x,y,w,h))
+        if click[0] == 1:
+            pygame.quit(),
+            quit()
+    else:
+        pygame.draw.rect(screen, ic,(x,y,w,h))
+        smallText = pygame.font.Font("freesansbold.ttf",20)
+        textSurf, textRect = text_objects(msg, smallText)
+        textRect.center = ((x+(w/2)),(y+(h/2)))
+        screen.blit(textSurf, textRect)
 
-            for event in pygame.event.get():         #this function reads the "events" that are made and makes a list, like where are you pointing with your mouse at
-                if event.type == pygame.QUIT:        #QUIT function will recognize when you want to close the window and shuts itself off
-                    loop = True
-                print(event)                         #prints every motion made with a mouse or keyboard
+def playbutton(msg,x,y,w,h,ic,ac):
+    mouse = pygame.mouse.get_pos()
+    click = pygame.mouse.get_pressed()
+    if x+w > mouse[0] > x and y+h > mouse[1] > y:
+        pygame.draw.rect(screen, ac, (x,y,w,h))
+        if click[0] == 1:
+            print("playgame!")
+    else:
+        pygame.draw.rect(screen, ic,(x,y,w,h))
+        smallText = pygame.font.Font("freesansbold.ttf",20)
+        textSurf, textRect = text_objects(msg, smallText)
+        textRect.center = ((x+(w/2)),(y+(h/2)))
+        screen.blit(textSurf, textRect)
 
-            self.screen.fill(self.bg_color)
-            pygame.display.update()
+def instructionsbutton(msg,x,y,w,h,ic,ac):
+    mouse = pygame.mouse.get_pos()
+    click = pygame.mouse.get_pressed()
+    if x+w > mouse[0] > x and y+h > mouse[1] > y:
+        pygame.draw.rect(screen, ac, (x,y,w,h))
+        if click[0] == 1:
+            print("instructions")
+    else:
+        pygame.draw.rect(screen, ic,(x,y,w,h))
+        smallText = pygame.font.Font("freesansbold.ttf",20)
+        textSurf, textRect = text_objects(msg, smallText)
+        textRect.center = ((x+(w/2)),(y+(h/2)))
+        screen.blit(textSurf, textRect)
+################################################################
+while start:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
 
-if __name__ == "__main__":
-    surface = pygame.display.set_mode((640, 480))    #surface width & length
-    pygame.display.set_caption('Survivor')           #title on the window
-    w = window(surface)
-    w.run()
+           start = False
 
 
+    screen.fill(white)
+    survivor(x, y)
+
+    largeText = pygame.font.Font('freesansbold.ttf',75)
+    TextSurf, TextRect = text_objects("", largeText)
+    TextRect.center = ((width/2),(height/3))
+    screen.blit(TextSurf, TextRect)
+
+    playbutton("Start Game",(width/5*1),(height/4*3),150,50,green,brightgreen)
+    instructionsbutton("Instructions",(width/5*2),(height/4*3),150,50,blue,brightblue)
+    quitbutton("Quit Game",(width/5*3),(height/4*3),150,50,red,brightred)
+
+
+    pygame.display.update()
+    clock.tick(60)
+
+
+
+
+pygame.quit()
