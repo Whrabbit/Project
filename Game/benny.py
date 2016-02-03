@@ -1,4 +1,5 @@
 import pygame
+import webbrowser
 
 pygame.init()
 width, height = 1000, 800
@@ -29,28 +30,13 @@ def text_objects(text, font):
     textSurface = font.render(text, True, black)
     return textSurface, textSurface.get_rect()
 
-def quitbutton(msg,x,y,w,h,ic,ac):
-    mouse = pygame.mouse.get_pos()
-    click = pygame.mouse.get_pressed()
-    if x+w > mouse[0] > x and y+h > mouse[1] > y:
-        pygame.draw.rect(screen, ac, (x,y,w,h))
-        if click[0] == 1:
-            pygame.quit(),
-            quit()
-    else:
-        pygame.draw.rect(screen, ic,(x,y,w,h))
-        smallText = pygame.font.Font("freesansbold.ttf",20)
-        textSurf, textRect = text_objects(msg, smallText)
-        textRect.center = ((x+(w/2)),(y+(h/2)))
-        screen.blit(textSurf, textRect)
-
 def playbutton(msg,x,y,w,h,ic,ac):
     mouse = pygame.mouse.get_pos()
     click = pygame.mouse.get_pressed()
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
         pygame.draw.rect(screen, ac, (x,y,w,h))
         if click[0] == 1:
-            # THIS ONE SHOULD BE CHANGED TO MAKE A NEW SCREEN
+            screen.fill(white)
     else:
         pygame.draw.rect(screen, ic,(x,y,w,h))
         smallText = pygame.font.Font("freesansbold.ttf",20)
@@ -64,7 +50,22 @@ def instructionsbutton(msg,x,y,w,h,ic,ac):
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
         pygame.draw.rect(screen, ac, (x,y,w,h))
         if click[0] == 1:
-            # THIS ONE SHOULD BE CHANGED TO MAKE A NEW SCREEN
+            webbrowser.open_new(r'Manual.pdf')
+    else:
+        pygame.draw.rect(screen, ic,(x,y,w,h))
+        smallText = pygame.font.Font("freesansbold.ttf",20)
+        textSurf, textRect = text_objects(msg, smallText)
+        textRect.center = ((x+(w/2)),(y+(h/2)))
+        screen.blit(textSurf, textRect)
+        
+def quitbutton(msg,x,y,w,h,ic,ac):
+    mouse = pygame.mouse.get_pos()
+    click = pygame.mouse.get_pressed()
+    if x+w > mouse[0] > x and y+h > mouse[1] > y:
+        pygame.draw.rect(screen, ac, (x,y,w,h))
+        if click[0] == 1:
+            pygame.quit(),
+            quit()
     else:
         pygame.draw.rect(screen, ic,(x,y,w,h))
         smallText = pygame.font.Font("freesansbold.ttf",20)
