@@ -3,7 +3,6 @@ import webbrowser
 import random
 
 pygame.init()
-pygame.mixer.init()
 width, height = 1500, 1040
 
 screen = pygame.display.set_mode((width, height))
@@ -21,7 +20,7 @@ brightblue = (0,85,255)
 clock = pygame.time.Clock()
 
 survivor_logo = pygame.image.load('survivor.png')
-game_board = pygame.image.load('scaled_boardgame.jpg')
+game_board = pygame.image.load('scaled_boardgame.png')
 #pawn img
 pawn1 = pygame.image.load('pawn1.png')
 pawn2 = pygame.image.load('pawn2.png')
@@ -37,14 +36,14 @@ dice6 = pygame.image.load('dice6.png').convert()
 # Positions of pawns
 a = (width * 0)
 s = (height * 0)
-x1 = (width * 0)
-y1 = (height * 0)
-x2 = (width * 0.64)
-y2 = (height * 0)
-x3 = (width * 0)
-y3 = (height * 0.928)
-x4 = (width * 0.64)
-y4 = (height * 0.928)
+x1 = (23)
+y1 = (27)
+x2 = (933)
+y2 = (27)
+x3 = (23)
+y3 = (937)
+x4 = (933)
+y4 = (937)
 def survivor(x, y):
     screen.blit(survivor_logo,(x,y))
 
@@ -88,7 +87,7 @@ def game_intro(start_screen = True):
             if event.type == pygame.QUIT:
 
                start_screen = False
-        pygame.mixer.music.load('/Users/Benny/Documents/School/Project/Game/final/Dust.wav')
+        pygame.mixer.music.load('Dust.wav')
         pygame.mixer.music.play(-1,0)
         screen.fill(white)
         survivor(x, y)
@@ -129,12 +128,13 @@ def start():
         screen.blit(pawn2,(x2,y2))
         screen.blit(pawn3,(x3,y3))
         screen.blit(pawn4,(x4,y4))
-
 def player_selection():
     start()
+
     while True:
         for event in pygame.event.get():
             button("Roll Dice",(width/4*3),(height/4*0.2),150,50,green,brightgreen,dice)
+
         pygame.display.update()
         clock.tick(10)
 game_intro()

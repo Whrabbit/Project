@@ -36,14 +36,14 @@ dice6 = pygame.image.load('dice6.png').convert()
 # Positions of pawns
 a = (width * 0)
 s = (height * 0)
-x1 = (width * 0)
-y1 = (height * 0)
-x2 = (width * 0.64)
-y2 = (height * 0)
-x3 = (width * 0)
-y3 = (height * 0.928)
-x4 = (width * 0.64)
-y4 = (height * 0.928)
+x1 = (23)
+y1 = (27)
+x2 = (933)
+y2 = (27)
+x3 = (23)
+y3 = (937)
+x4 = (933)
+y4 = (937)
 def survivor(x, y):
     screen.blit(survivor_logo,(x,y))
 
@@ -57,7 +57,6 @@ def text_objects(text, font):
 def button(msg,x,y,w,h,ic,ac,action):
     mouse = pygame.mouse.get_pos()
     click = pygame.mouse.get_pressed()
-    print(mouse)
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
         pygame.draw.rect(screen, ac, (x,y,w,h))
         smallText = pygame.font.Font("freesansbold.ttf",20)
@@ -88,7 +87,8 @@ def game_intro(start_screen = True):
             if event.type == pygame.QUIT:
 
                start_screen = False
-
+        pygame.mixer.music.load('Dust.wav')
+        pygame.mixer.music.play(-1,0)
         screen.fill(white)
         survivor(x, y)
 
