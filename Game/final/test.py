@@ -104,20 +104,16 @@ def game_intro(start_screen = True):
 
 
 def player_selection():
-    start()
-    d = random.randint(1,6)
+
     while True:
         for event in pygame.event.get():
-            click = pygame.mouse.get_pressed()
-            if click[0] == 1:
-                click = True
-            else:
-                button("Roll Dice",(width/4*3),(height/4*0.2),150,50,green,brightgreen,dice)
-                largeText = pygame.font.Font('freesansbold.ttf',75)
-                TextSurf, TextRect  = text_objects(str(d), largeText)
-                TextRect.center = ((width/2 *1.5),(height/3*2))
-                screen.blit(TextSurf, TextRect)
-
+            start()
+            button("Roll Dice",(width/4*3),(height/4*0.2),150,50,green,brightgreen,dice)
+            d = random.randint(1,6)
+            largeText = pygame.font.Font('freesansbold.ttf',75)
+            TextSurf, TextRect  = text_objects(str(d), largeText)
+            TextRect.center = ((width/2 *1.5),(height/3*2))
+            screen.blit(TextSurf, TextRect)
         pygame.display.update()
         clock.tick(10)
 game_intro()
