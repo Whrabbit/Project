@@ -25,8 +25,8 @@ game_board = pygame.image.load('scaled_boardgame.jpg')
 def survivor(x, y):
     screen.blit(survivor_logo,(x,y))
 
-x = (width * 0)
-y = (height * 0)
+x = (width * 0.07)
+y = (height * 0.30)
 #########################################
 def text_objects(text, font):
     textSurface = font.render(text, True, black)
@@ -47,10 +47,10 @@ def button(msg,x,y,w,h,ic,ac,action):
         screen.blit(textSurf, textRect)
 
 def start():
-    screen.blit(game_board,(x,y))
+    screen.blit(game_board,(a,s))
 
-x = (width * 0.07)
-y = (height * 0.30)
+a = (width * 0)
+s = (height * 0)
 
 def open():
     webbrowser.open_new(r'Manual.pdf')
