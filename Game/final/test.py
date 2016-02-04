@@ -76,23 +76,23 @@ def dice():
     else:
         screen.blit(dice6, [1150, 200])
 def start():
-    screen.fill(white)
-    screen.blit(game_board,(a,s))
-    screen.blit(pawn1,(x1,y1))
-    screen.blit(pawn2,(x2,y2))
-    screen.blit(pawn3,(x3,y3))
-    screen.blit(pawn4,(x4,y4))
+        screen.fill(white)
+        screen.blit(game_board,(a,s))
+        screen.blit(pawn1,(x1,y1))
+        screen.blit(pawn2,(x2,y2))
+        screen.blit(pawn3,(x3,y3))
+        screen.blit(pawn4,(x4,y4))
 
 a = (width * 0)
 s = (height * 0)
 x1 = (width * 0)
 y1 = (height * 0)
-x2 = (width * 0.595)
+x2 = (width * 0.64)
 y2 = (height * 0)
 x3 = (width * 0)
-y3 = (height * 0.855)
-x4 = (width * 0.595)
-y4 = (height * 0.855)
+y3 = (height * 0.928)
+x4 = (width * 0.64)
+y4 = (height * 0.928)
 
 def open():
     webbrowser.open_new(r'Manual.pdf')
