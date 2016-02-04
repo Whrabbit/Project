@@ -109,8 +109,8 @@ def game_intro(start_screen = True):
 
                start_screen = False
 
-        pygame.mixer.music.load('Dust.wav')
-        pygame.mixer.music.play(-1,0)
+        #pygame.mixer.music.load('Dust.wav')
+        #pygame.mixer.music.play(-1,0)
         screen.fill(white)
         survivor(x, y)
 
