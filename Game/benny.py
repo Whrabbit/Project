@@ -1,8 +1,9 @@
 import pygame
 import webbrowser
+import random
 
 pygame.init()
-width, height = 1040, 1040
+width, height = 1500, 1040
 
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption('Survivor game group 3')
@@ -18,20 +19,18 @@ brightblue = (0,85,255)
 
 clock = pygame.time.Clock()
 
-survivor_logo = pygame.image.load('final/survivor.png')
-game_board = pygame.image.load('final/scaled_boardgame.jpg')
-pawn1 = pygame.image.load('final/pawn1.png')
-pawn2 = pygame.image.load('final/pawn2.png')
-pawn3 = pygame.image.load('final/pawn3.png')
-pawn4 = pygame.image.load('final/pawn4.png')
+survivor_logo = pygame.image.load('survivor.png')
+game_board = pygame.image.load('scaled_boardgame.jpg')
+pawn1 = pygame.image.load('pawn1.png')
+pawn2 = pygame.image.load('pawn2.png')
+pawn3 = pygame.image.load('pawn3.png')
+pawn4 = pygame.image.load('pawn4.png')
 
 def survivor(x, y):
     screen.blit(survivor_logo,(x,y))
 
-x = (width * 0.08)
+x = (width * 0.22)
 y = (height * 0.30)
-
-
 
 def text_objects(text, font):
     textSurface = font.render(text, True, black)
@@ -51,6 +50,9 @@ def button(msg,x,y,w,h,ic,ac,action):
         textRect.center = ((x+(w/2)),(y+(h/2)))
         screen.blit(textSurf, textRect)
 
+def dice():
+    d = random.randint(1,6)
+
 def start():
     screen.fill(white)
     screen.blit(game_board,(a,s))
@@ -59,19 +61,17 @@ def start():
     screen.blit(pawn3,(x3,y3))
     screen.blit(pawn4,(x4,y4))
 
-
 a = (width * 0)
 s = (height * 0)
 
 x1 = (width * 0)
 y1 = (height * 0)
-x2 = (width * 0.858)
+x2 = (width * 0.5)
 y2 = (height * 0)
 x3 = (width * 0)
-y3 = (height * 0.858)
-x4 = (width * 0.858)
-y4 = (height * 0.858)
-
+y3 = (height * 0.5)
+x4 = (width * 0.5)
+y4 = (height * 0.5)
 
 def open():
     webbrowser.open_new(r'Manual.pdf')
@@ -79,7 +79,6 @@ def open():
 def quitgame():
     pygame.quit()
     quit()
-
 
 def game_intro(start_screen = True):
     while start_screen:
@@ -91,9 +90,9 @@ def game_intro(start_screen = True):
         screen.fill(white)
         survivor(x, y)
 
-        button("Start Game",(width/5*1),(height/4*3),150,50,green,brightgreen,player_selection)
-        button("Instructions",(width/5*2),(height/4*3),150,50,blue,brightblue,open)
-        button("Quit Game",(width/5*3),(height/4*3),150,50,red,brightred,quitgame)
+        button("Start Game",(width/4*1),(height/4*3),150,50,green,brightgreen,player_selection)
+        button("Instructions",(width/4.5*2),(height/4*3),150,50,blue,brightblue,open)
+        button("Quit Game",(width/4.7*3),(height/4*3),150,50,red,brightred,quitgame)
 
         largeText = pygame.font.Font('freesansbold.ttf',75)
         TextSurf, TextRect = text_objects(" ", largeText)
@@ -109,14 +108,15 @@ def player_selection():
         for event in pygame.event.get():
             i=1
         start()
-        pygame.display.flip()
 
+        button("Roll Dice",(width/4*3),(height/4*0.2),150,50,green,brightgreen,dice)
+        d = random.randint(1,6)
+        largeText = pygame.font.Font('freesansbold.ttf',75)
+        TextSurf, TextRect  = text_objects(str(d), largeText)
+        TextRect.center = ((width*0.8),(height/3))
+        screen.blit(TextSurf, TextRect)
 
-
-
-
-
-
-
+        pygame.display.update()
+        clock.tick(30)
 game_intro()
 pygame.quit()
