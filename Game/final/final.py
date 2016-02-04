@@ -18,15 +18,15 @@ brightblue = (0,85,255)
 
 clock = pygame.time.Clock()
 start = True
-survivor_logo = pygame.image.load('/Users/Benny/Desktop/survivor.png')
-game_board = pygame.image.load('/Users/Benny/Desktop/scaled_boardgame.jpg')
+survivor_logo = pygame.image.load('survivor.png')
+game_board = pygame.image.load('scaled_boardgame.jpg')
 
 #########################################
 def survivor(x, y):
     screen.blit(survivor_logo,(x,y))
 
-x = (width * 0.07)
-y = (height * 0.30)
+x = (width * 0)
+y = (height * 0)
 #########################################
 def text_objects(text, font):
     textSurface = font.render(text, True, black)
