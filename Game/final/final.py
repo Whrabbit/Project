@@ -9,12 +9,13 @@ pygame.display.set_caption('Survivor game group 3')
 
 black = (0,0,0)
 white = (255,255,255)
-red = (240,85,0)
-green = (85,240,0)
+red = (255,0,0)
+green = (0,255,0)
 brightred = (255,85,0)
 brightgreen = (85,255,0)
-blue = (0,85,240)
+blue = (0,0,255)
 brightblue = (0,85,255)
+grey = (150,150,150)
 
 clock = pygame.time.Clock()
 start = True
@@ -47,6 +48,7 @@ def button(msg,x,y,w,h,ic,ac,action):
         screen.blit(textSurf, textRect)
 
 def start():
+    screen.fill(white)
     screen.blit(game_board,(a,s))
 
 a = (width * 0)
