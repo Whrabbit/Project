@@ -439,21 +439,21 @@ elif damageblocked < damage:
 
 print("the defending fighter was:",fighter2)
 
-if fighter2 == Player2.PlayerName:
-    Player2.HP = Player1.HP - realdamage
-    Player2.CP = Player1.CP - CPLoss
+if fighter2 == Player1.PlayerName:
+    Player1.HP = Player1.HP - realdamage
+    Player1.CP = Player1.CP - CPLoss
 
 if fighter2 == Player2.PlayerName:
-    Player2.HP = Player1.HP - realdamage
-    Player2.CP = Player1.CP - CPLoss
+    Player2.HP = Player2.HP - realdamage
+    Player2.CP = Player2.CP - CPLoss
 
 if fighter2 == Player3.PlayerName:
-    Player3.HP = Player1.HP - realdamage
-    Player3.CP = Player1.CP - CPLoss
+    Player3.HP = Player3.HP - realdamage
+    Player3.CP = Player3.CP - CPLoss
 
 if fighter2 == Player4.PlayerName:
-    Player4.HP = Player1.HP - realdamage
-    Player4.CP = Player1.CP - CPLoss
+    Player4.HP = Player4.HP - realdamage
+    Player4.CP = Player4.CP - CPLoss
 
 print("the superfighter was:",SuperFighter)
 print("he hit for:",damage)
