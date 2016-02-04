@@ -19,10 +19,6 @@ brightblue = (0,85,255)
 
 clock = pygame.time.Clock()
 
-<<<<<<< HEAD
-survivor_logo = pygame.image.load('img/survivor.png')
-game_board = pygame.image.load('img/scaled_boardgame.png')
-=======
 #creating the PlayerClass
 class Player(object):
     def __init__(self):
@@ -63,9 +59,8 @@ Player4.X = 10
 Player4.Y = 10
 Player4.PlayerName = "Manny Pecquiao"
 
-survivor_logo = pygame.image.load('survivor.png')
-game_board = pygame.image.load('scaled_boardgame.png')
->>>>>>> origin/master
+survivor_logo = pygame.image.load('img/survivor.png')
+game_board = pygame.image.load('img/scaled_boardgame.png')
 #pawn img
 p1 = pygame.image.load('img/pawn1.png')
 p2 = pygame.image.load('img/pawn2.png')
@@ -92,8 +87,6 @@ y4 = (937)
 
 #positions van de tiles
 tiles = [(23,27), (170,27), (245,27), (325,27), (405,27), (520,270), (635,27), (710,270), (790,27), (870,27), (933,27), (933,175), (933,245), (933,325), (933,400), (933,520), (933,635), (933,710), (933,785), (933,865), (933,937), (870,937), (790,937), (710,937), (635,937), (520,937), (400,937), (320,937), (245,937), (165,937), (23,937), (23,170), (23,250), (23,325), (23,400), (23,525), (23,640), (23,715), (23,790), (23,870)]
-
-
 
 def survivor(x, y):
     screen.blit(survivor_logo,(x,y))
@@ -139,8 +132,8 @@ def game_intro(start_screen = True):
 
                start_screen = False
 
-        pygame.mixer.music.load('Dust.wav')
-        pygame.mixer.music.play(-1,0)
+        #pygame.mixer.music.load('Dust.wav')
+        #pygame.mixer.music.play(-1,0)
         screen.fill(white)
         survivor(x, y)
 
@@ -180,6 +173,7 @@ def start():
         screen.blit(p2,tiles[10])
         screen.blit(p3,tiles[30])
         screen.blit(p4,tiles[20])
+
 def player_selection():
     start()
 
@@ -189,6 +183,8 @@ def player_selection():
                 pygame.quit()
                 quit()
             button("Roll Dice",(width/4*3),(height/4*0.2),150,50,green,brightgreen,dice)
+
+
         pygame.display.update()
         clock.tick(10)
 
