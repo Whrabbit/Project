@@ -3,6 +3,7 @@ import webbrowser
 import random
 
 pygame.init()
+pygame.mixer.init()
 width, height = 1500, 1040
 
 screen = pygame.display.set_mode((width, height))
@@ -87,7 +88,8 @@ def game_intro(start_screen = True):
             if event.type == pygame.QUIT:
 
                start_screen = False
-
+        pygame.mixer.music.load('/Users/Benny/Documents/School/Project/Game/final/Dust.wav')
+        pygame.mixer.music.play(-1,0)
         screen.fill(white)
         survivor(x, y)
 
@@ -127,6 +129,7 @@ def start():
         screen.blit(pawn2,(x2,y2))
         screen.blit(pawn3,(x3,y3))
         screen.blit(pawn4,(x4,y4))
+
 def player_selection():
     start()
     while True:
