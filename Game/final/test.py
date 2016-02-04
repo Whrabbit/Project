@@ -1,5 +1,6 @@
 import pygame
 import webbrowser
+import random
 
 pygame.init()
 width, height = 1500, 1040
@@ -31,8 +32,6 @@ def survivor(x, y):
 x = (width * 0.22)
 y = (height * 0.30)
 
-
-
 def text_objects(text, font):
     textSurface = font.render(text, True, black)
     return textSurface, textSurface.get_rect()
@@ -51,6 +50,11 @@ def button(msg,x,y,w,h,ic,ac,action):
         textRect.center = ((x+(w/2)),(y+(h/2)))
         screen.blit(textSurf, textRect)
 
+def dice():
+    x= random.randint(1,6)
+
+    print(x)
+
 def start():
     screen.fill(white)
     screen.blit(game_board,(a,s))
@@ -58,7 +62,6 @@ def start():
     screen.blit(pawn2,(x2,y2))
     screen.blit(pawn3,(x3,y3))
     screen.blit(pawn4,(x4,y4))
-
 
 a = (width * 0)
 s = (height * 0)
@@ -78,7 +81,6 @@ def open():
 def quitgame():
     pygame.quit()
     quit()
-
 
 def game_intro(start_screen = True):
     while start_screen:
@@ -109,11 +111,12 @@ def player_selection():
             i=1
         start()
 
-
-        button("Roll",(width/4*1),(height/4*3),150,50,green,brightgreen,dice)
-
+        button("Roll Dice",(width/4*3),(height/4*0.2),150,50,green,brightgreen,dice)
 
 
-        pygame.display.flip()
+
+        pygame.display.update()
+        clock.tick(10)
+
 game_intro()
 pygame.quit()
