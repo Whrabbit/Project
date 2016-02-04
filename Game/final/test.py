@@ -51,7 +51,7 @@ def button(msg,x,y,w,h,ic,ac,action):
         screen.blit(textSurf, textRect)
 
 def dice():
-    x= random.randint(1,6)
+    x = random.randint(1,6)
 
     print(x)
 
@@ -113,9 +113,6 @@ def player_selection():
 
         button("Roll Dice",(width/4*3),(height/4*0.2),150,50,green,brightgreen,dice)
 
-
-
-        pygame.display.update()
         clock.tick(10)
 
 game_intro()
