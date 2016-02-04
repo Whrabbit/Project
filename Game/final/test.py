@@ -21,7 +21,10 @@ clock = pygame.time.Clock()
 start = True
 survivor_logo = pygame.image.load('survivor.png')
 game_board = pygame.image.load('scaled_boardgame.jpg')
-
+pawn1 = pygame.image.load('pawn1.png')
+pawn2 = pygame.image.load('pawn2.png')
+pawn3 = pygame.image.load('pawn3.png')
+pawn4 = pygame.image.load('pawn4.png')
 #########################################
 def survivor(x, y):
     screen.blit(survivor_logo,(x,y))
@@ -47,12 +50,26 @@ def button(msg,x,y,w,h,ic,ac,action):
         textRect.center = ((x+(w/2)),(y+(h/2)))
         screen.blit(textSurf, textRect)
 
-def start():
+def start_game():
     screen.fill(white)
     screen.blit(game_board,(a,s))
+    screen.blit(pawn1,(x1,y1))
+    screen.blit(pawn2,(x2,y2))
+    screen.blit(pawn3,(x3,y3))
+    screen.blit(pawn4,(x4,y4))
+
 
 a = (width * 0)
 s = (height * 0)
+
+x1 = (width * 0)
+y1 = (height * 0)
+x2 = (width * 0.858)
+y2 = (height * 0)
+x3 = (width * 0)
+y3 = (height * 0.858)
+x4 = (width * 0.858)
+y4 = (height * 0.858)
 
 def open():
     webbrowser.open_new(r'Manual.pdf')
@@ -67,7 +84,7 @@ while start:
         if event.type == pygame.QUIT:
 
            start = False
-
+            
     screen.fill(white)
     survivor(x, y)
 
@@ -76,7 +93,7 @@ while start:
     TextRect.center = ((width/2),(height/3))
     screen.blit(TextSurf, TextRect)
 
-    button("Start Game",(width/5*1),(height/4*3),150,50,green,brightgreen,start)
+    button("Start Game",(width/5*1),(height/4*3),150,50,green,brightgreen,start_game)
     button("Instructions",(width/5*2),(height/4*3),150,50,blue,brightblue,open)
     button("Quit Game",(width/5*3),(height/4*3),150,50,red,brightred,quitgame)
 
