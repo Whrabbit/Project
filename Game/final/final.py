@@ -132,7 +132,11 @@ def player_selection():
     start()
 
     while True:
+
         for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
             button("Roll Dice",(width/4*3),(height/4*0.2),150,50,green,brightgreen,dice)
 
         pygame.display.update()

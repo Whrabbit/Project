@@ -88,9 +88,10 @@ def quitgame():
 def game_intro(start_screen = True):
     while start_screen:
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+            if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
 
                start_screen = False
+
         #pygame.mixer.music.load('Dust.wav')
         #pygame.mixer.music.play(-1,0)
         screen.fill(white)
@@ -138,6 +139,9 @@ def player_selection():
 
     while True:
         for event in pygame.event.get():
+            if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
+                pygame.quit()
+                quit()
             button("Roll Dice",(width/4*3),(height/4*0.2),150,50,green,brightgreen,dice)
 
 
