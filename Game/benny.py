@@ -1,6 +1,4 @@
-import pygame
-import webbrowser
-import random
+import pygame,webbrowser,random
 
 pygame.init()
 width, height = 1500, 1040
@@ -70,8 +68,8 @@ x2 = (width * 0.5)
 y2 = (height * 0)
 x3 = (width * 0)
 y3 = (height * 0.5)
-x4 = (width * 0.5)
-y4 = (height * 0.5)
+x4 = (width * 1)
+y4 = (height * 0.4)
 
 def open():
     webbrowser.open_new(r'Manual.pdf')
