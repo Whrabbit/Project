@@ -2,7 +2,7 @@ import pygame
 import webbrowser
 
 pygame.init()
-width, height = 1000, 800
+width, height = 1040, 1040
 
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption('Survivor game group 3')
@@ -18,10 +18,12 @@ brightblue = (0,85,255)
 
 clock = pygame.time.Clock()
 
-survivor_logo = pygame.image.load('/Users/Benny/Documents/School/Project/Game/final/survivor.png')
-game_board = pygame.image.load('/Users/Benny/Documents/School/Project/Game/final/scaled_boardgame.jpg')
-
-
+survivor_logo = pygame.image.load('final/survivor.png')
+game_board = pygame.image.load('final/scaled_boardgame.jpg')
+pawn1 = pygame.image.load('final/pawn1.png')
+pawn2 = pygame.image.load('final/pawn2.png')
+pawn3 = pygame.image.load('final/pawn3.png')
+pawn4 = pygame.image.load('final/pawn4.png')
 
 def survivor(x, y):
     screen.blit(survivor_logo,(x,y))
@@ -51,10 +53,24 @@ def button(msg,x,y,w,h,ic,ac,action):
 
 def start():
     screen.fill(white)
-    screen.blit(game_board,(a,b))
+    screen.blit(game_board,(a,s))
+    screen.blit(pawn1,(x1,y1))
+    screen.blit(pawn2,(x2,y2))
+    screen.blit(pawn3,(x3,y3))
+    screen.blit(pawn4,(x4,y4))
+
 
 a = (width * 0)
-b = (height * 0)
+s = (height * 0)
+
+x1 = (width * 0)
+y1 = (height * 0)
+x2 = (width * 0.858)
+y2 = (height * 0)
+x3 = (width * 0)
+y3 = (height * 0.858)
+x4 = (width * 0.858)
+y4 = (height * 0.858)
 
 
 def open():
