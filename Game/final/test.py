@@ -113,7 +113,6 @@ def player_selection():
 
         button("Roll Dice",(width/4*3),(height/4*0.2),150,50,green,brightgreen,dice)
 
-        pygame.display.update()
         clock.tick(10)
 
 game_intro()
