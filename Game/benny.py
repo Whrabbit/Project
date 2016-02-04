@@ -1,8 +1,7 @@
-import pygame
-import webbrowser
-import random
+import pygame,webbrowser,random
 
 pygame.init()
+pygame.mixer.init()
 width, height = 1500, 1040
 
 screen = pygame.display.set_mode((width, height))
@@ -19,12 +18,12 @@ brightblue = (0,85,255)
 
 clock = pygame.time.Clock()
 
-survivor_logo = pygame.image.load('survivor.png')
-game_board = pygame.image.load('scaled_boardgame.jpg')
-pawn1 = pygame.image.load('pawn1.png')
-pawn2 = pygame.image.load('pawn2.png')
-pawn3 = pygame.image.load('pawn3.png')
-pawn4 = pygame.image.load('pawn4.png')
+survivor_logo = pygame.image.load('/Users/Benny/Documents/School/Project/Game/final/survivor.png')
+game_board = pygame.image.load('/Users/Benny/Documents/School/Project/Game/final/scaled_boardgame.jpg')
+pawn1 = pygame.image.load('/Users/Benny/Documents/School/Project/Game/final/pawn1.png')
+pawn2 = pygame.image.load('/Users/Benny/Documents/School/Project/Game/final/pawn2.png')
+pawn3 = pygame.image.load('/Users/Benny/Documents/School/Project/Game/final/pawn3.png')
+pawn4 = pygame.image.load('/Users/Benny/Documents/School/Project/Game/final/pawn4.png')
 
 def survivor(x, y):
     screen.blit(survivor_logo,(x,y))
@@ -50,28 +49,41 @@ def button(msg,x,y,w,h,ic,ac,action):
         textRect.center = ((x+(w/2)),(y+(h/2)))
         screen.blit(textSurf, textRect)
 
-def dice():
-    d = random.randint(1,6)
-
 def start():
     screen.fill(white)
-    screen.blit(game_board,(a,s))
     screen.blit(pawn1,(x1,y1))
     screen.blit(pawn2,(x2,y2))
     screen.blit(pawn3,(x3,y3))
     screen.blit(pawn4,(x4,y4))
 
-a = (width * 0)
-s = (height * 0)
-
 x1 = (width * 0)
 y1 = (height * 0)
-x2 = (width * 0.5)
-y2 = (height * 0)
-x3 = (width * 0)
-y3 = (height * 0.5)
-x4 = (width * 0.5)
-y4 = (height * 0.5)
+x2 = (width * 1)
+y2 = (height * 1)
+x3 = (width * 2)
+y3 = (height * 2)
+x4 = (width * 2.1)
+y4 = (height * 2.1)
+
+# def game_board():
+#     screen.fill(white)
+#     screen.blit(game_board,(a,s))
+#     screen.blit(pawn1,(x1,y1))
+#     screen.blit(pawn2,(x2,y2))
+#     screen.blit(pawn3,(x3,y3))
+#     screen.blit(pawn4,(x4,y4))
+#
+# a = (width * 0)
+# s = (height * 0)
+#
+# x1 = (width * 0)
+# y1 = (height * 0)
+# x2 = (width * 0.5)
+# y2 = (height * 0)
+# x3 = (width * 0)
+# y3 = (height * 0.5)
+# x4 = (width * 1)
+# y4 = (height * 0.4)
 
 def open():
     webbrowser.open_new(r'Manual.pdf')
@@ -81,12 +93,15 @@ def quitgame():
     quit()
 
 def game_intro(start_screen = True):
+
     while start_screen:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                print (event.type)
 
-               start_screen = False
-
+                start_screen = False
+        pygame.mixer.music.load('/Users/Benny/Documents/School/Project/Game/final/Dust.wav')
+        pygame.mixer.music.play(-1,0)
         screen.fill(white)
         survivor(x, y)
 
@@ -109,12 +124,7 @@ def player_selection():
             i=1
         start()
 
-        button("Roll Dice",(width/4*3),(height/4*0.2),150,50,green,brightgreen,dice)
-        d = random.randint(1,6)
-        largeText = pygame.font.Font('freesansbold.ttf',75)
-        TextSurf, TextRect  = text_objects(str(d), largeText)
-        TextRect.center = ((width*0.8),(height/3))
-        screen.blit(TextSurf, TextRect)
+
 
         pygame.display.update()
         clock.tick(30)

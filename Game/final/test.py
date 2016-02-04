@@ -20,11 +20,33 @@ brightblue = (0,85,255)
 clock = pygame.time.Clock()
 
 survivor_logo = pygame.image.load('survivor.png')
-game_board = pygame.image.load('scaled_boardgame.jpg')
-pawn1 = pygame.image.load('pawn1.png')
-pawn2 = pygame.image.load('pawn2.png')
-pawn3 = pygame.image.load('pawn3.png')
-pawn4 = pygame.image.load('pawn4.png')
+game_board = pygame.image.load('scaled_boardgame.png')
+#pawn img
+p1 = pygame.image.load('pawn1.png')
+p2 = pygame.image.load('pawn2.png')
+p3 = pygame.image.load('pawn3.png')
+p4 = pygame.image.load('pawn4.png')
+#dice img
+dice1 = pygame.image.load('dice1.png').convert()
+dice2 = pygame.image.load('dice2.png').convert()
+dice3 = pygame.image.load('dice3.png').convert()
+dice4 = pygame.image.load('dice4.png').convert()
+dice5 = pygame.image.load('dice5.png').convert()
+dice6 = pygame.image.load('dice6.png').convert()
+# Positions of pawns
+a = (width * 0)
+s = (height * 0)
+x1 = (23)
+y1 = (27)
+x2 = (933)
+y2 = (27)
+x3 = (23)
+y3 = (937)
+x4 = (933)
+y4 = (937)
+
+#positions van de tiles
+tiles = [(23,27), (170,27), (245,27), (325,27), (405,27), (520,270), (635,27), (710,270), (790,27), (870,27), (933,27), (933,175), (933,245), (933,325), (933,400), (933,520), (933,635), (933,710), (933,785), (933,865), (933,937), (870,937), (790,937), (710,937), (635,937), (520,937), (400,937), (320,937), (245,937), (165,937), (23,937), (23,170), (23,250), (23,325), (23,400), (23,525), (23,640), (23,715), (23,790), (23,870)]
 
 def survivor(x, y):
     screen.blit(survivor_logo,(x,y))
@@ -41,6 +63,10 @@ def button(msg,x,y,w,h,ic,ac,action):
     click = pygame.mouse.get_pressed()
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
         pygame.draw.rect(screen, ac, (x,y,w,h))
+        smallText = pygame.font.Font("freesansbold.ttf",20)
+        textSurf, textRect = text_objects(msg, smallText)
+        textRect.center = ((x+(w/2)),(y+(h/2)))
+        screen.blit(textSurf, textRect)
         if click[0] == 1:
           action()
     else:
@@ -50,45 +76,24 @@ def button(msg,x,y,w,h,ic,ac,action):
         textRect.center = ((x+(w/2)),(y+(h/2)))
         screen.blit(textSurf, textRect)
 
-def dice():
-    x = random.randint(1,6)
 
-    print(x)
-
-def start():
-    screen.fill(white)
-    screen.blit(game_board,(a,s))
-    screen.blit(pawn1,(x1,y1))
-    screen.blit(pawn2,(x2,y2))
-    screen.blit(pawn3,(x3,y3))
-    screen.blit(pawn4,(x4,y4))
-
-a = (width * 0)
-s = (height * 0)
-
-x1 = (width * 0)
-y1 = (height * 0)
-x2 = (width * 0.5)
-y2 = (height * 0)
-x3 = (width * 0)
-y3 = (height * 0.5)
-x4 = (width * 0.5)
-y4 = (height * 0.5)
-
+#instructions
 def open():
     webbrowser.open_new(r'Manual.pdf')
 
 def quitgame():
     pygame.quit()
     quit()
-
+#start screen
 def game_intro(start_screen = True):
     while start_screen:
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+            if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
 
                start_screen = False
 
+        #pygame.mixer.music.load('Dust.wav')
+        #pygame.mixer.music.play(-1,0)
         screen.fill(white)
         survivor(x, y)
 
@@ -104,15 +109,43 @@ def game_intro(start_screen = True):
         pygame.display.update()
         clock.tick(60)
 
+#dices
+def dice():
+    pygame.draw.rect(screen, black, (1128,177,300,300))
+    d = random.randint(1,6)
+    if d == 1:
+        screen.blit(dice1, [1150, 200])
+    elif d == 2:
+        screen.blit(dice2, [1150, 200])
+    elif d == 3:
+        screen.blit(dice3, [1150, 200])
+    elif d == 4:
+        screen.blit(dice4, [1150, 200])
+    elif d == 5:
+        screen.blit(dice5, [1150, 200])
+    else:
+        screen.blit(dice6, [1150, 200])
+#screen of the game
+def start():
+        screen.fill(white)
+        screen.blit(game_board,(a,s))
+        screen.blit(p1,(x1,y1))
+        screen.blit(p2,(x2,y2))
+        screen.blit(p3,(x3,y3))
+        screen.blit(p4,(x4,y4))
 
 def player_selection():
+    start()
+
     while True:
         for event in pygame.event.get():
-            i=1
-        start()
+            if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
+                pygame.quit()
+                quit()
+            button("Roll Dice",(width/4*3),(height/4*0.2),150,50,green,brightgreen,dice)
 
-        button("Roll Dice",(width/4*3),(height/4*0.2),150,50,green,brightgreen,dice)
 
+        pygame.display.update()
         clock.tick(10)
 
 game_intro()
