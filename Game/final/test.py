@@ -2,7 +2,7 @@ import pygame
 import webbrowser
 
 pygame.init()
-width, height = 1000, 800
+width, height = 1040, 1040
 
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption('Survivor game group 3')
