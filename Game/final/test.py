@@ -25,7 +25,12 @@ pawn1 = pygame.image.load('pawn1.png')
 pawn2 = pygame.image.load('pawn2.png')
 pawn3 = pygame.image.load('pawn3.png')
 pawn4 = pygame.image.load('pawn4.png')
-
+dice1 = pygame.image.load('dice1.png').convert()
+dice2 = pygame.image.load('dice2.png').convert()
+dice3 = pygame.image.load('dice3.png').convert()
+dice4 = pygame.image.load('dice4.png').convert()
+dice5 = pygame.image.load('dice5.png').convert()
+dice6 = pygame.image.load('dice6.png').convert()
 def survivor(x, y):
     screen.blit(survivor_logo,(x,y))
 
@@ -41,6 +46,10 @@ def button(msg,x,y,w,h,ic,ac,action):
     click = pygame.mouse.get_pressed()
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
         pygame.draw.rect(screen, ac, (x,y,w,h))
+        smallText = pygame.font.Font("freesansbold.ttf",20)
+        textSurf, textRect = text_objects(msg, smallText)
+        textRect.center = ((x+(w/2)),(y+(h/2)))
+        screen.blit(textSurf, textRect)
         if click[0] == 1:
           action()
     else:
@@ -50,9 +59,22 @@ def button(msg,x,y,w,h,ic,ac,action):
         textRect.center = ((x+(w/2)),(y+(h/2)))
         screen.blit(textSurf, textRect)
 
-def dice():
-    d = random.randint(1,6)
 
+def dice():
+    pygame.draw.rect(screen, black, (1128,177,300,300))
+    d = random.randint(1,6)
+    if d == 1:
+        screen.blit(dice1, [1150, 200])
+    elif d == 2:
+        screen.blit(dice2, [1150, 200])
+    elif d == 3:
+        screen.blit(dice3, [1150, 200])
+    elif d == 4:
+        screen.blit(dice4, [1150, 200])
+    elif d == 5:
+        screen.blit(dice5, [1150, 200])
+    else:
+        screen.blit(dice6, [1150, 200])
 def start():
     screen.fill(white)
     screen.blit(game_board,(a,s))
@@ -63,7 +85,6 @@ def start():
 
 a = (width * 0)
 s = (height * 0)
-
 x1 = (width * 0)
 y1 = (height * 0)
 x2 = (width * 0.595)
@@ -104,16 +125,10 @@ def game_intro(start_screen = True):
 
 
 def player_selection():
-
+    start()
     while True:
         for event in pygame.event.get():
-            start()
             button("Roll Dice",(width/4*3),(height/4*0.2),150,50,green,brightgreen,dice)
-            d = random.randint(1,6)
-            largeText = pygame.font.Font('freesansbold.ttf',75)
-            TextSurf, TextRect  = text_objects(str(d), largeText)
-            TextRect.center = ((width/2 *1.5),(height/3*2))
-            screen.blit(TextSurf, TextRect)
         pygame.display.update()
         clock.tick(10)
 game_intro()
