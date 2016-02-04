@@ -48,6 +48,8 @@ y4 = (937)
 #positions van de tiles
 tiles = [(23,27), (170,27), (245,27), (325,27), (405,27), (520,270), (635,27), (710,270), (790,27), (870,27), (933,27), (933,175), (933,245), (933,325), (933,400), (933,520), (933,635), (933,710), (933,785), (933,865), (933,937), (870,937), (790,937), (710,937), (635,937), (520,937), (400,937), (320,937), (245,937), (165,937), (23,937), (23,170), (23,250), (23,325), (23,400), (23,525), (23,640), (23,715), (23,790), (23,870)]
 
+
+
 def survivor(x, y):
     screen.blit(survivor_logo,(x,y))
 
@@ -129,11 +131,10 @@ def dice():
 def start():
         screen.fill(white)
         screen.blit(game_board,(a,s))
-        screen.blit(p1,(x1,y1))
-        screen.blit(p2,(x2,y2))
-        screen.blit(p3,(x3,y3))
-        screen.blit(p4,(x4,y4))
-
+        screen.blit(p1,tiles[0])
+        screen.blit(p2,tiles[10])
+        screen.blit(p3,tiles[30])
+        screen.blit(p4,tiles[20])
 def player_selection():
     start()
 
@@ -143,8 +144,6 @@ def player_selection():
                 pygame.quit()
                 quit()
             button("Roll Dice",(width/4*3),(height/4*0.2),150,50,green,brightgreen,dice)
-
-
         pygame.display.update()
         clock.tick(10)
 
