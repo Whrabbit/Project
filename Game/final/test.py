@@ -22,10 +22,10 @@ clock = pygame.time.Clock()
 survivor_logo = pygame.image.load('survivor.png')
 game_board = pygame.image.load('scaled_boardgame.png')
 #pawn img
-pawn1 = pygame.image.load('pawn1.png')
-pawn2 = pygame.image.load('pawn2.png')
-pawn3 = pygame.image.load('pawn3.png')
-pawn4 = pygame.image.load('pawn4.png')
+p1 = pygame.image.load('pawn1.png')
+p2 = pygame.image.load('pawn2.png')
+p3 = pygame.image.load('pawn3.png')
+p4 = pygame.image.load('pawn4.png')
 #dice img
 dice1 = pygame.image.load('dice1.png').convert()
 dice2 = pygame.image.load('dice2.png').convert()
@@ -44,6 +44,10 @@ x3 = (23)
 y3 = (937)
 x4 = (933)
 y4 = (937)
+
+#positions van de tiles
+tiles = [(23,27), (170,27), (245,27), (325,27), (405,27), (520,270), (635,27), (710,270), (790,27), (870,27), (933,27), (933,175), (933,245), (933,325), (933,400), (933,520), (933,635), (933,710), (933,785), (933,865), (933,937), (870,937), (790,937), (710,937), (635,937), (520,937), (400,937), (320,937), (245,937), (165,937), (23,937), (23,170), (23,250), (23,325), (23,400), (23,525), (23,640), (23,715), (23,790), (23,870)]
+
 def survivor(x, y):
     screen.blit(survivor_logo,(x,y))
 
@@ -87,8 +91,8 @@ def game_intro(start_screen = True):
             if event.type == pygame.QUIT:
 
                start_screen = False
-        pygame.mixer.music.load('Dust.wav')
-        pygame.mixer.music.play(-1,0)
+        #pygame.mixer.music.load('Dust.wav')
+        #pygame.mixer.music.play(-1,0)
         screen.fill(white)
         survivor(x, y)
 
@@ -124,10 +128,11 @@ def dice():
 def start():
         screen.fill(white)
         screen.blit(game_board,(a,s))
-        screen.blit(pawn1,(x1,y1))
-        screen.blit(pawn2,(x2,y2))
-        screen.blit(pawn3,(x3,y3))
-        screen.blit(pawn4,(x4,y4))
+        screen.blit(p1,(x1,y1))
+        screen.blit(p2,(x2,y2))
+        screen.blit(p3,(x3,y3))
+        screen.blit(p4,(x4,y4))
+
 def player_selection():
     start()
 
@@ -135,7 +140,9 @@ def player_selection():
         for event in pygame.event.get():
             button("Roll Dice",(width/4*3),(height/4*0.2),150,50,green,brightgreen,dice)
 
+
         pygame.display.update()
         clock.tick(10)
+
 game_intro()
 pygame.quit()
