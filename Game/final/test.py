@@ -21,11 +21,16 @@ clock = pygame.time.Clock()
 
 survivor_logo = pygame.image.load('survivor.png')
 game_board = pygame.image.load('scaled_boardgame.jpg')
+<<<<<<< HEAD
 pawn1 = pygame.image.load('pawn1.png')
 pawn2 = pygame.image.load('pawn2.png')
 pawn3 = pygame.image.load('pawn3.png')
 pawn4 = pygame.image.load('pawn4.png')
 
+=======
+
+#########################################
+>>>>>>> parent of 4ded41c... put in pawns and board
 def survivor(x, y):
     screen.blit(survivor_logo,(x,y))
 
@@ -50,6 +55,7 @@ def button(msg,x,y,w,h,ic,ac,action):
         textRect.center = ((x+(w/2)),(y+(h/2)))
         screen.blit(textSurf, textRect)
 
+<<<<<<< HEAD
 def dice():
     x = random.randint(1,6)
 
@@ -62,10 +68,16 @@ def start():
     screen.blit(pawn2,(x2,y2))
     screen.blit(pawn3,(x3,y3))
     screen.blit(pawn4,(x4,y4))
+=======
+def start():
+    screen.fill(white)
+    screen.blit(game_board,(a,s))
+>>>>>>> parent of 4ded41c... put in pawns and board
 
 a = (width * 0)
 s = (height * 0)
 
+<<<<<<< HEAD
 x1 = (width * 0)
 y1 = (height * 0)
 x2 = (width * 0.5)
@@ -75,6 +87,8 @@ y3 = (height * 0.5)
 x4 = (width * 0.5)
 y4 = (height * 0.5)
 
+=======
+>>>>>>> parent of 4ded41c... put in pawns and board
 def open():
     webbrowser.open_new(r'Manual.pdf')
 
@@ -87,19 +101,32 @@ def game_intro(start_screen = True):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
 
+<<<<<<< HEAD
                start_screen = False
 
         screen.fill(white)
         survivor(x, y)
+=======
+           start = False
+
+    screen.fill(white)
+    survivor(x, y)
+>>>>>>> parent of 4ded41c... put in pawns and board
 
         button("Start Game",(width/4*1),(height/4*3),150,50,green,brightgreen,player_selection)
         button("Instructions",(width/4.5*2),(height/4*3),150,50,blue,brightblue,open)
         button("Quit Game",(width/4.7*3),(height/4*3),150,50,red,brightred,quitgame)
 
+<<<<<<< HEAD
         largeText = pygame.font.Font('freesansbold.ttf',75)
         TextSurf, TextRect = text_objects(" ", largeText)
         TextRect.center = ((width/2),(height/3))
         screen.blit(TextSurf, TextRect)
+=======
+    button("Start Game",(width/5*1),(height/4*3),150,50,green,brightgreen,start)
+    button("Instructions",(width/5*2),(height/4*3),150,50,blue,brightblue,open)
+    button("Quit Game",(width/5*3),(height/4*3),150,50,red,brightred,quitgame)
+>>>>>>> parent of 4ded41c... put in pawns and board
 
         pygame.display.update()
         clock.tick(60)

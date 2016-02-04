@@ -118,5 +118,11 @@ def player_selection():
 
 
 
+<<<<<<< HEAD
 game_intro()
+=======
+
+
+
+>>>>>>> parent of 4ded41c... put in pawns and board
 pygame.quit()

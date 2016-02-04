@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/final/test.py" line="58" mnemonic="9" />
   </component>
+=======
+>>>>>>> parent of 4ded41c... put in pawns and board
   <component name="ChangeListManager">
     <list default="true" id="7f0882c1-2be0-4206-8248-ee608399bd4e" name="Default" comment="" />
     <ignored path="Game.iws" />
@@ -28,18 +31,33 @@
         <entry file="file://$PROJECT_DIR$/whitney.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
               <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+=======
+              <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+>>>>>>> parent of 4ded41c... put in pawns and board
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/final/test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.6429725">
               <caret line="69" column="17" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
               <folding />
+=======
+      <file leaf-file-name="final.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/final/final.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.05610561">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+>>>>>>> parent of 4ded41c... put in pawns and board
             </state>
           </provider>
         </entry>
@@ -64,8 +82,11 @@
         <option value="$PROJECT_DIR$/whitney.py" />
         <option value="$PROJECT_DIR$/benny.py" />
         <option value="$PROJECT_DIR$/final/final.py" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/final/tet.py" />
         <option value="$PROJECT_DIR$/final/test.py" />
+=======
+>>>>>>> parent of 4ded41c... put in pawns and board
       </list>
     </option>
   </component>
@@ -157,7 +178,7 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.test (1)">
+  <component name="RunManager" selected="Python.final">
     <configuration default="false" name="whitney" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -175,41 +196,69 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
+<<<<<<< HEAD
     <configuration default="false" name="final" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/final" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Game" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/final/final.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/final" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Game" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/final/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+=======
     <configuration default="false" name="benny" type="PythonConfigurationType" factoryName="Python" temporary="true">
+>>>>>>> parent of 4ded41c... put in pawns and board
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+<<<<<<< HEAD
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/final" />
+=======
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+>>>>>>> parent of 4ded41c... put in pawns and board
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Game" />
+<<<<<<< HEAD
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/final/final.py" />
+=======
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/benny.py" />
+>>>>>>> parent of 4ded41c... put in pawns and board
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+<<<<<<< HEAD
+    <configuration default="false" name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
+    <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+>>>>>>> parent of 4ded41c... put in pawns and board
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+<<<<<<< HEAD
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/final" />
+=======
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pygbutton-master/tests" />
+>>>>>>> parent of 4ded41c... put in pawns and board
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Game" />
+<<<<<<< HEAD
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/final/test.py" />
+=======
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pygbutton-master/tests/test.py" />
+>>>>>>> parent of 4ded41c... put in pawns and board
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+<<<<<<< HEAD
+    <configuration default="false" name="benny" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
+    <configuration default="false" name="timo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+>>>>>>> parent of 4ded41c... put in pawns and board
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -221,12 +270,20 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Game" />
+<<<<<<< HEAD
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/benny.py" />
+=======
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/timo.py" />
+>>>>>>> parent of 4ded41c... put in pawns and board
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
+<<<<<<< HEAD
     <configuration default="false" name="tet" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
+    <configuration default="false" name="final" type="PythonConfigurationType" factoryName="Python" temporary="true">
+>>>>>>> parent of 4ded41c... put in pawns and board
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -238,7 +295,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Game" />
+<<<<<<< HEAD
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/final/tet.py" />
+=======
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/final/final.py" />
+>>>>>>> parent of 4ded41c... put in pawns and board
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -367,6 +428,7 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.whitney" />
+<<<<<<< HEAD
       <item index="1" class="java.lang.String" itemvalue="Python.final" />
       <item index="2" class="java.lang.String" itemvalue="Python.test (1)" />
       <item index="3" class="java.lang.String" itemvalue="Python.benny" />
@@ -379,6 +441,20 @@
         <item index="2" class="java.lang.String" itemvalue="Python.whitney" />
         <item index="3" class="java.lang.String" itemvalue="Python.benny" />
         <item index="4" class="java.lang.String" itemvalue="Python.final" />
+=======
+      <item index="1" class="java.lang.String" itemvalue="Python.benny" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test" />
+      <item index="3" class="java.lang.String" itemvalue="Python.timo" />
+      <item index="4" class="java.lang.String" itemvalue="Python.final" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.final" />
+        <item index="1" class="java.lang.String" itemvalue="Python.whitney" />
+        <item index="2" class="java.lang.String" itemvalue="Python.timo" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test" />
+        <item index="4" class="java.lang.String" itemvalue="Python.benny" />
+>>>>>>> parent of 4ded41c... put in pawns and board
       </list>
     </recent_temporary>
   </component>
@@ -441,11 +517,39 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
+<<<<<<< HEAD
       <option name="time" value="4" />
+=======
+      <option name="time" value="1" />
+>>>>>>> parent of 4ded41c... put in pawns and board
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/benny.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seicho.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> parent of 4ded41c... put in pawns and board
     <entry file="file://$PROJECT_DIR$/jamar.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -793,6 +897,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$USER_HOME$/Downloads/Frequency-master/Frequency-master/Frequency/Main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35702747">
@@ -842,6 +947,23 @@
         <state vertical-scroll-proportion="0.6429725">
           <caret line="69" column="17" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/whitney.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final/final.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05610561">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+>>>>>>> parent of 4ded41c... put in pawns and board
         </state>
       </provider>
     </entry>
