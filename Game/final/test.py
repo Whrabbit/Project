@@ -20,7 +20,7 @@ brightblue = (0,85,255)
 clock = pygame.time.Clock()
 
 survivor_logo = pygame.image.load('survivor.png')
-game_board = pygame.image.load('scaled_boardgame.jpg')
+game_board = pygame.image.load('scaled_boardgame.png')
 #pawn img
 pawn1 = pygame.image.load('pawn1.png')
 pawn2 = pygame.image.load('pawn2.png')
@@ -57,6 +57,7 @@ def text_objects(text, font):
 def button(msg,x,y,w,h,ic,ac,action):
     mouse = pygame.mouse.get_pos()
     click = pygame.mouse.get_pressed()
+    print(mouse)
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
         pygame.draw.rect(screen, ac, (x,y,w,h))
         smallText = pygame.font.Font("freesansbold.ttf",20)
@@ -129,9 +130,11 @@ def start():
         screen.blit(pawn4,(x4,y4))
 def player_selection():
     start()
+
     while True:
         for event in pygame.event.get():
             button("Roll Dice",(width/4*3),(height/4*0.2),150,50,green,brightgreen,dice)
+
         pygame.display.update()
         clock.tick(10)
 game_intro()
