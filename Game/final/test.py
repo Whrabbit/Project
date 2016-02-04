@@ -2,7 +2,7 @@ import pygame
 import webbrowser
 
 pygame.init()
-width, height = 1040, 1040
+width, height = 1500, 1040
 
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption('Survivor game group 3')
@@ -28,7 +28,7 @@ pawn4 = pygame.image.load('pawn4.png')
 def survivor(x, y):
     screen.blit(survivor_logo,(x,y))
 
-x = (width * 0.08)
+x = (width * 0.22)
 y = (height * 0.30)
 
 
@@ -65,13 +65,12 @@ s = (height * 0)
 
 x1 = (width * 0)
 y1 = (height * 0)
-x2 = (width * 0.858)
+x2 = (width * 0.5)
 y2 = (height * 0)
 x3 = (width * 0)
-y3 = (height * 0.858)
-x4 = (width * 0.858)
-y4 = (height * 0.858)
-
+y3 = (height * 0.5)
+x4 = (width * 0.5)
+y4 = (height * 0.5)
 
 def open():
     webbrowser.open_new(r'Manual.pdf')
@@ -91,9 +90,9 @@ def game_intro(start_screen = True):
         screen.fill(white)
         survivor(x, y)
 
-        button("Start Game",(width/5*1),(height/4*3),150,50,green,brightgreen,player_selection)
-        button("Instructions",(width/5*2),(height/4*3),150,50,blue,brightblue,open)
-        button("Quit Game",(width/5*3),(height/4*3),150,50,red,brightred,quitgame)
+        button("Start Game",(width/4*1),(height/4*3),150,50,green,brightgreen,player_selection)
+        button("Instructions",(width/4.5*2),(height/4*3),150,50,blue,brightblue,open)
+        button("Quit Game",(width/4.7*3),(height/4*3),150,50,red,brightred,quitgame)
 
         largeText = pygame.font.Font('freesansbold.ttf',75)
         TextSurf, TextRect = text_objects(" ", largeText)
@@ -109,14 +108,12 @@ def player_selection():
         for event in pygame.event.get():
             i=1
         start()
+
+
+        button("Roll",(width/4*1),(height/4*3),150,50,green,brightgreen,dice)
+
+
+
         pygame.display.flip()
-
-
-
-
-
-
-
-
 game_intro()
 pygame.quit()
