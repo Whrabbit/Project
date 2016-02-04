@@ -19,6 +19,46 @@ brightblue = (0,85,255)
 
 clock = pygame.time.Clock()
 
+#creating the PlayerClass
+class Player(object):
+    def __init__(self):
+        self.HP = 100
+        self.CP = 15
+        self.PlayerName = ""
+
+#creating the players
+#Player1
+Player1 = Player()
+Player1.HP = 100
+Player1.CP = 15
+Player1.X = 10
+Player1.Y = 10
+Player1.PlayerName = "Mike Tysen"
+
+#Player2
+Player2 = Player()
+Player2.HP = 100
+Player2.CP = 15
+Player2.X = 10
+Player2.Y = 10
+Player2.PlayerName = "Badr Heri"
+
+#Player3
+Player3 = Player()
+Player3.HP = 100
+Player3.CP = 15
+Player3.X = 10
+Player3.Y = 10
+Player3.PlayerName = "Rocky Belboa"
+
+#Player4
+Player4 = Player()
+Player4.HP = 100
+Player4.CP = 15
+Player4.X = 10
+Player4.Y = 10
+Player4.PlayerName = "Manny Pecquiao"
+
 survivor_logo = pygame.image.load('survivor.png')
 game_board = pygame.image.load('scaled_boardgame.png')
 #pawn img
@@ -68,7 +108,7 @@ def button(msg,x,y,w,h,ic,ac,action):
         textRect.center = ((x+(w/2)),(y+(h/2)))
         screen.blit(textSurf, textRect)
         if click[0] == 1:
-          action()
+          action(),print("Player1 currently has:",Player1.HP,"HP and has",Player1.CP,"ConditionPoints"),print("Player2 currently has:",Player2.HP,"HP and has",Player2.CP,"ConditionPoints"),print("Player3 currently has:",Player3.HP,"HP and has",Player3.CP,"ConditionPoints"),print("Player4 currently has:",Player4.HP,"HP and has",Player4.CP,"ConditionPoints")
     else:
         pygame.draw.rect(screen, ic,(x,y,w,h))
         smallText = pygame.font.Font("freesansbold.ttf",20)
