@@ -108,7 +108,8 @@ def button(msg,x,y,w,h,ic,ac,action):
         textRect.center = ((x+(w/2)),(y+(h/2)))
         screen.blit(textSurf, textRect)
         if click[0] == 1:
-          action(),print("Player1 currently has:",Player1.HP,"HP and has",Player1.CP,"ConditionPoints"),print("Player2 currently has:",Player2.HP,"HP and has",Player2.CP,"ConditionPoints"),print("Player3 currently has:",Player3.HP,"HP and has",Player3.CP,"ConditionPoints"),print("Player4 currently has:",Player4.HP,"HP and has",Player4.CP,"ConditionPoints")
+          action()
+
     else:
         pygame.draw.rect(screen, ic,(x,y,w,h))
         smallText = pygame.font.Font("freesansbold.ttf",20)
@@ -132,8 +133,8 @@ def game_intro(start_screen = True):
 
                start_screen = False
 
-        #pygame.mixer.music.load('Dust.wav')
-        #pygame.mixer.music.play(-1,0)
+        pygame.mixer.music.load('Dust.wav')
+        pygame.mixer.music.play(-1,0)
         screen.fill(white)
         survivor(x, y)
 
@@ -176,7 +177,7 @@ def start():
 
 def player_selection():
     start()
-
+    print("Player1 currently has:",Player1.HP,"HP and has",Player1.CP,"ConditionPoints"),print("Player2 currently has:",Player2.HP,"HP and has",Player2.CP,"ConditionPoints"),print("Player3 currently has:",Player3.HP,"HP and has",Player3.CP,"ConditionPoints"),print("Player4 currently has:",Player4.HP,"HP and has",Player4.CP,"ConditionPoints")
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
