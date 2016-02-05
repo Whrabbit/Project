@@ -127,14 +127,15 @@ def quitgame():
     quit()
 #start screen
 def game_intro(start_screen = True):
+    pygame.mixer.music.load('Dust.wav')
+    pygame.mixer.music.play(-1,0)
     while start_screen:
         for event in pygame.event.get():
             if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
 
                start_screen = False
 
-        pygame.mixer.music.load('Dust.wav')
-        pygame.mixer.music.play(-1,0)
+
         screen.fill(white)
         survivor(x, y)
 
@@ -177,6 +178,8 @@ def start():
 
 def player_selection():
     start()
+    pygame.mixer.music.load('Dust.wav')
+    pygame.mixer.music.play(-1,0)
     print("Player1 currently has:",Player1.HP,"HP and has",Player1.CP,"ConditionPoints"),print("Player2 currently has:",Player2.HP,"HP and has",Player2.CP,"ConditionPoints"),print("Player3 currently has:",Player3.HP,"HP and has",Player3.CP,"ConditionPoints"),print("Player4 currently has:",Player4.HP,"HP and has",Player4.CP,"ConditionPoints")
     while True:
         for event in pygame.event.get():
