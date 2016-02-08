@@ -1,6 +1,8 @@
 import pygame
 import webbrowser
 import random
+from Player import *
+
 pygame.init()
 width, height = 1500, 800
 
@@ -21,11 +23,7 @@ clock = pygame.time.Clock()
 
 survivor_logo = pygame.image.load('img/survivor.png')
 game_board = pygame.image.load('img/scaled_boardgame.png')
-#pawn img
-p1 = pygame.image.load('img/pawn1.png')
-p2 = pygame.image.load('img/pawn2.png')
-p3 = pygame.image.load('img/pawn3.png')
-p4 = pygame.image.load('img/pawn4.png')
+
 #dice img
 dice1 = pygame.image.load('img/dice1.png').convert()
 dice2 = pygame.image.load('img/dice2.png').convert()
@@ -38,8 +36,6 @@ a = (width * 0)
 s = (height * 0)
 
 #pygame.display.set_mode((0,0),pygame.FULLSCREEN)
-#positions van de tiles
-position = [(8,13), (170,27), (245,27), (325,27), (405,27), (520,270), (635,27), (710,270), (400,13), (400,13), (707,13), (933,175), (933,245), (933,325), (933,400), (933,520), (933,635), (933,710), (933,785), (933,865), (707,715), (870,937), (790,937), (710,937), (635,937), (520,937), (400,937), (320,937), (245,937), (165,937), (8,715), (23,170), (23,250), (23,325), (23,400), (23,525), (23,640), (0,715), (23,790), (23,870)]
 
 def survivor(x, y):
     screen.blit(survivor_logo,(x,y))
@@ -69,7 +65,6 @@ def button(msg,x,y,w,h,ic,ac,action):
         textSurf, textRect = text_objects(msg, smallText)
         textRect.center = ((x+(w/2)),(y+(h/2)))
         screen.blit(textSurf, textRect)
-
 
 #instructions
 def open():
@@ -104,56 +99,44 @@ def game_intro(start_screen = True):
         pygame.display.update()
         clock.tick(60)
 
-
-class Player:
-    def __init__(self,player,position,char,money,i):
-        self.player = player
-        self.position = position
-        self.char = char
-        self.money = money
-        self.i = i
-
-    def move(self, dice):
-        for t in range(0,dice):
-            currenti = self.i
-            next= currenti + 1
-            if next> 39 :
-                next = 0
-            self.position = position[next]
-            self.i = next
-            time.sleep(.15)
-
-    def draw(self,screen):
-        screen.blit(pygame.transform.scale(self.img,(10,10)),(position[self.position]))
-
-p1 = Player("Mike Tysen",position[0],pygame.image.load('img/pawn1.png'), 100, 15)
-p2 = Player("Badr Heri",position[10],pygame.image.load('img/pawn2.png'), 100, 15)
-p3 = Player("Rocky Belboa",position[30],pygame.image.load('img/pawn3.png'), 100, 15)
-p4 = Player("Manny Pecquiao",position[20],pygame.image.load('img/pawn4.png'), 100, 15)
 #dices
 
 def dice():
     pygame.draw.rect(screen, black, (1128,177,300,300))
+    p1.tilesY = 0
+    p1.tilesX = 0
+
     d = random.randint(1,6)
     if d == 1:
         screen.blit(dice1, [1150, 200])
-        p1.position * 1
+        movePlayer(p1.tilesY + 1, p1.tilesX + 1)
+
     elif d == 2:
         screen.blit(dice2, [1150, 200])
+        movePlayer(p1.tilesY + 2, p1.tilesX + 2)
     elif d == 3:
         screen.blit(dice3, [1150, 200])
+        movePlayer(p1.tilesY + 3, p1.tilesX + 3)
     elif d == 4:
         screen.blit(dice4, [1150, 200])
+        movePlayer(p1.tilesY + 4, p1.tilesX + 4)
     elif d == 5:
         screen.blit(dice5, [1150, 200])
+        movePlayer(p1.tilesY + 5, p1.tilesX + 5)
     else:
         screen.blit(dice6, [1150, 200])
+        movePlayer(p1.tilesY + 6, p1.tilesX + 6)
+
+
+def movePlayer(x, y):
+    screen.blit(pygame.image.load('img/pawn1.png'), (x, y))
+    print(x, y)
 
 #screen of the game
 def start():
     screen.fill(white)
     screen.blit(game_board,(a,s))
-    screen.blit(pygame.image.load('img/pawn1.png'), position[0])
+    screen.blit(pygame.image.load('img/pawn1.png'), tiles[0])
 
 
 def player_selection():
