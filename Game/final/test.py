@@ -100,37 +100,44 @@ def game_intro(start_screen = True):
         clock.tick(10)
 
 #dices
-
 def dice():
     pygame.draw.rect(screen, black, (1128,177,300,300))
     d = random.randint(1,6)
     p1.tilesY = 20
     p1.tilesX = 0
-    p2.tilesY = 0
-    p2.tilesX = 400
+    p2.tilesY = 500
+    p2.tilesX = 0
     if d == 1:
         screen.blit(dice1, [1150, 200])
-        p1.movePlayer(p1.tilesY + 50, p1.tilesX + 0)
-        p2.movePlayer(p2.tilesY + 0, p2.tilesX + 50)
+        if p1.movePlayer(p1.tilesY + 50, p1.tilesX + 0):
+            if p1.tilesY >= 425 and True:
+                p1.movePlayer(p1.tilesY + 0, p1.tilesX + 50)
     elif d == 2:
         screen.blit(dice2, [1150, 200])
         p1.movePlayer(p1.tilesY + 100, p1.tilesX + 0)
+        if p1.tilesY >= 425 and True:
+            p1.movePlayer(p1.tilesY + 0, p1.tilesX + 100)
     elif d == 3:
         screen.blit(dice3, [1150, 200])
         p1.movePlayer(p1.tilesY + 200, p1.tilesX + 0)
-    elif d == 4:
+        if p1.tilesY >= 425 and True:
+            p1.movePlayer(p1.tilesY + 0, p1.tilesX + 200)
+    else:
+        d == 4
         screen.blit(dice4, [1150, 200])
         p1.movePlayer(p1.tilesY + 250, p1.tilesX + 0)
-    elif d == 5:
-        screen.blit(dice5, [1150, 200])
-        p1.movePlayer(p1.tilesY + 350, p1.tilesX + 0)
-    else:
-        screen.blit(dice6, [1150, 200])
-        p1.movePlayer(p1.tilesY + 425, p1.tilesX + 0)
+        if p1.tilesY >= 425 and True:
+            p1.movePlayer(p1.tilesY + 0, p1.tilesX + 250)
+
+
 #screen of the game
 def start():
     screen.fill(white)
     screen.blit(game_board,(a,s))
+    screen.blit(pygame.image.load('img/pawn1.png'),tiles[0])
+    screen.blit(pygame.image.load('img/pawn2.png'),tiles[10])
+    screen.blit(pygame.image.load('img/pawn3.png'),tiles[30])
+    screen.blit(pygame.image.load('img/pawn4.png'),tiles[20])
     #screen.blit(pygame.image.load('img/pawn1.png'), tiles[0])
 
 
