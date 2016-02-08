@@ -21,20 +21,6 @@ clock = pygame.time.Clock()
 
 #positions van de tiles
 tiles = [(8,13), (170,27), (245,27), (325,27), (405,27), (520,270), (635,27), (710,270), (400,13), (400,13), (707,13), (933,175), (933,245), (933,325), (933,400), (933,520), (933,635), (933,710), (933,785), (933,865), (707,715), (870,937), (790,937), (710,937), (635,937), (520,937), (400,937), (320,937), (245,937), (165,937), (8,715), (23,170), (23,250), (23,325), (23,400), (23,525), (23,640), (0,715), (23,790), (23,870)]
-#creating the PlayerClass
-class Player(object):
-    def __init__(self,HP,CP,Playername,img,position):
-        self.HP = 100
-        self.CP = 15
-        self.PlayerName = ""
-        self.img = img
-        self.position = position
-
-#creating the players
-p1 = Player(100,15,"Mike Tysen",pygame.image.load('img/pawn1.png'),tiles[0])
-p2 = Player(100,15,"Badr Heri",pygame.image.load('img/pawn2.png'),tiles[10])
-p3 = Player(100,15,"Rocky Belboa",pygame.image.load('img/pawn3.png'),tiles[30])
-p4 = Player(100,15,"Manny Pecquiao",pygame.image.load('img/pawn4.png'),tiles[20])
 
 
 survivor_logo = pygame.image.load('img/survivor.png')
@@ -124,7 +110,20 @@ def game_intro(start_screen = True):
         pygame.display.update()
         clock.tick(60)
 
+#creating the PlayerClass
+class Player(object):
+    def __init__(self,HP,CP,Playername,img,position):
+        self.HP = 100
+        self.CP = 15
+        self.PlayerName = ""
+        self.img = img
+        self.position = position
 
+#creating the players
+p1 = Player(100,15,"Mike Tysen",pygame.image.load('img/pawn1.png'),tiles[0])
+p2 = Player(100,15,"Badr Heri",pygame.image.load('img/pawn2.png'),tiles[10])
+p3 = Player(100,15,"Rocky Belboa",pygame.image.load('img/pawn3.png'),tiles[30])
+p4 = Player(100,15,"Manny Pecquiao",pygame.image.load('img/pawn4.png'),tiles[20])
 #dices
 def dice():
     pygame.draw.rect(screen, black, (1128,177,300,300))
@@ -142,22 +141,20 @@ def dice():
     else:
         screen.blit(dice6, [1150, 200])
 
-def move(self, dice):
-    for t in range(0,d):
-        if d > 39:
-            d = 0
-        p1.tiles += d
-        p2.tiles += d
-        p3.tiles += d
-        p4.tiles += d
+def move(self):
+    for n in range(0,d):
+        if tiles > 39:
+            tiles = 0
+        p1.position = tiles[0] + d
+        p2.position + d
+        p3.position + d
+        p4.position + d
+
 #screen of the game
 def start():
         screen.fill(white)
         screen.blit(game_board,(a,s))
-        screen.blit(pygame.image.load('img/pawn1.png'),(tiles[0]))
-        screen.blit(pygame.image.load('img/pawn2.png'),(tiles[10]))
-        screen.blit(pygame.image.load('img/pawn3.png'),(tiles[30]))
-        screen.blit(pygame.image.load('img/pawn4.png'),(tiles[20]))
+        screen.blit(pygame.image.load('img/pawn1.png'), tiles[0])
 
 def player_selection():
     start()
