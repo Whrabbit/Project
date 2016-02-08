@@ -97,20 +97,23 @@ def game_intro(start_screen = True):
         screen.blit(TextSurf, TextRect)
 
         pygame.display.update()
-        clock.tick(30)
+        clock.tick(10)
 
 #dices
 
 def dice():
     pygame.draw.rect(screen, black, (1128,177,300,300))
     d = random.randint(1,6)
+    p1.tilesY = 8
+    p1.tilesX = 0
+
     if d == 1:
         screen.blit(dice1, [1150, 200])
-        #movePlayer(p1.tilesY + 1, p1.tilesX + 1)
+        p1.movePlayer(p1.tilesY + 110, p1.tilesX + 0)
 
     elif d == 2:
         screen.blit(dice2, [1150, 200])
-        #movePlayer(p1.tilesY + 2, p1.tilesX + 2)
+        p1.movePlayer(p1.tilesY + 50, p1.tilesX + 0)
     elif d == 3:
         screen.blit(dice3, [1150, 200])
         #movePlayer(p1.tilesY + 3, p1.tilesX + 3)
@@ -134,18 +137,9 @@ def player_selection():
     start()
     #pygame.mixer.music.load('Dust.wav')
     #pygame.mixer.music.play(-1,0)
-    p1 = Player('Maikel Taison', 'img/pawn1.png')
-    player2 = Player('Maikel Taison', 'img/pawn2.png')
-    player3 = Player('Maikel Taison', 'img/pawn3.png')
-    player4 = Player('Maikel Taison', 'img/pawn4.png')
 
     while True:
         for event in pygame.event.get():
-
-            for i in range(0, d):
-                p1.movePlayer(50, 0)
-
-            p1.movePlayer(50, 0)
             if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
                 pygame.quit()
                 quit()
@@ -153,7 +147,7 @@ def player_selection():
 
 
         pygame.display.update()
-        clock.tick(30)
+        clock.tick(10)
 
 game_intro()
 pygame.quit()
