@@ -141,6 +141,15 @@ def dice():
         screen.blit(dice5, [1150, 200])
     else:
         screen.blit(dice6, [1150, 200])
+
+def move(self, dice):
+    for t in range(0,d):
+        if d > 39:
+            d = 0
+        p1.tiles += d
+        p2.tiles += d
+        p3.tiles += d
+        p4.tiles += d
 #screen of the game
 def start():
         screen.fill(white)
@@ -149,7 +158,6 @@ def start():
         screen.blit(pygame.image.load('img/pawn2.png'),(tiles[10]))
         screen.blit(pygame.image.load('img/pawn3.png'),(tiles[30]))
         screen.blit(pygame.image.load('img/pawn4.png'),(tiles[20]))
-
 
 def player_selection():
     start()
@@ -162,7 +170,6 @@ def player_selection():
                 pygame.quit()
                 quit()
             button("Roll Dice",(width/4*3),(height/4*0.2),150,50,green,brightgreen,dice)
-
 
         pygame.display.update()
         clock.tick(10)
