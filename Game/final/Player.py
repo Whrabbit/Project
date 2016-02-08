@@ -21,9 +21,9 @@ class Player:
     def drawPlayer(self, screen = pygame.display.set_mode((1500, 800))):
         screen.blit(pygame.image.load(str(self.Image)), (self.X, self.Y))
 p1 = Player('Maikel Taison', 'img/pawn1.png')
-player2 = Player('Maikel Taison', 'img/pawn2.png')
-player3 = Player('Maikel Taison', 'img/pawn3.png')
-player4 = Player('Maikel Taison', 'img/pawn4.png')
+p2 = Player('Maikel Taison', 'img/pawn2.png')
+p3 = Player('Maikel Taison', 'img/pawn3.png')
+p4 = Player('Maikel Taison', 'img/pawn4.png')
 #p1 = Player("Mike Tysen",tiles[0],pygame.image.load('img/pawn1.png'), 100, 15)
 #p2 = Player("Badr Heri",tiles[10],pygame.image.load('img/pawn2.png'), 100, 15)
 #p3 = Player("Rocky Belboa",tiles[30],pygame.image.load('img/pawn3.png'), 100, 15)

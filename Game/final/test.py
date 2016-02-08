@@ -111,7 +111,7 @@ def dice():
     if d == 1:
         screen.blit(dice1, [1150, 200])
         p1.movePlayer(p1.tilesY + 50, p1.tilesX + 0)
-        p2.movePlayer(p1.tilesY + 0, p1.tilesX + 50)
+        p2.movePlayer(p2.tilesY + 0, p2.tilesX + 50)
     elif d == 2:
         screen.blit(dice2, [1150, 200])
         p1.movePlayer(p1.tilesY + 100, p1.tilesX + 0)
