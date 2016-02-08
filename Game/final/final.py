@@ -83,7 +83,7 @@ x3 = (23)
 y3 = (937)
 x4 = (933)
 y4 = (937)
-pygame.display.set_mode((0,0),pygame.FULLSCREEN)
+#pygame.display.set_mode((0,0),pygame.FULLSCREEN)
 #positions van de tiles
 tiles = [(8,13), (170,27), (245,27), (325,27), (405,27), (520,270), (635,27), (710,270), (400,13), (400,13), (707,13), (933,175), (933,245), (933,325), (933,400), (933,520), (933,635), (933,710), (933,785), (933,865), (707,715), (870,937), (790,937), (710,937), (635,937), (520,937), (400,937), (320,937), (245,937), (165,937), (8,715), (23,170), (23,250), (23,325), (23,400), (23,525), (23,640), (0,715), (23,790), (23,870)]
 
@@ -126,8 +126,8 @@ def quitgame():
     quit()
 #start screen
 def game_intro(start_screen = True):
-    pygame.mixer.music.load('Dust.wav')
-    pygame.mixer.music.play(-1,0)
+    #pygame.mixer.music.load('Dust.wav')
+    #pygame.mixer.music.play(-1,0)
     while start_screen:
         for event in pygame.event.get():
             if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
@@ -177,8 +177,8 @@ def start():
 
 def player_selection():
     start()
-    pygame.mixer.music.load('Dust.wav')
-    pygame.mixer.music.play(-1,0)
+    #pygame.mixer.music.load('Dust.wav')
+    #pygame.mixer.music.play(-1,0)
     print("Player1 currently has:",Player1.HP,"HP and has",Player1.CP,"ConditionPoints"),print("Player2 currently has:",Player2.HP,"HP and has",Player2.CP,"ConditionPoints"),print("Player3 currently has:",Player3.HP,"HP and has",Player3.CP,"ConditionPoints"),print("Player4 currently has:",Player4.HP,"HP and has",Player4.CP,"ConditionPoints")
     while True:
         for event in pygame.event.get():
