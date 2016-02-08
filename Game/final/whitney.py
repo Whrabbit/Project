@@ -129,6 +129,7 @@ def dice():
     pygame.draw.rect(screen, black, (1128,177,300,300))
     d = random.randint(1,6)
     if d == 1:
+        d = tiles[0] + d
         screen.blit(dice1, [1150, 200])
     elif d == 2:
         screen.blit(dice2, [1150, 200])
@@ -140,6 +141,7 @@ def dice():
         screen.blit(dice5, [1150, 200])
     else:
         screen.blit(dice6, [1150, 200])
+    return d
 
 def move(self):
     for n in range(0,d):
@@ -149,6 +151,7 @@ def move(self):
         p2.position + d
         p3.position + d
         p4.position + d
+
 
 #screen of the game
 def start():

@@ -1,9 +1,10 @@
 import pygame
 import webbrowser
 import random
+from random import randint
 
 pygame.init()
-width, height = 1500, 1040
+width, height = 1500, 800
 
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption('Survivor game group 3')
@@ -19,20 +20,20 @@ brightblue = (0,85,255)
 
 clock = pygame.time.Clock()
 
-survivor_logo = pygame.image.load('survivor.png')
-game_board = pygame.image.load('scaled_boardgame.png')
+survivor_logo = pygame.image.load('img/survivor.png')
+game_board = pygame.image.load('img/scaled_boardgame.png')
 #pawn img
-p1 = pygame.image.load('pawn1.png')
-p2 = pygame.image.load('pawn2.png')
-p3 = pygame.image.load('pawn3.png')
-p4 = pygame.image.load('pawn4.png')
+p1 = pygame.image.load('img/pawn1.png')
+p2 = pygame.image.load('img/pawn2.png')
+p3 = pygame.image.load('img/pawn3.png')
+p4 = pygame.image.load('img/pawn4.png')
 #dice img
-dice1 = pygame.image.load('dice1.png').convert()
-dice2 = pygame.image.load('dice2.png').convert()
-dice3 = pygame.image.load('dice3.png').convert()
-dice4 = pygame.image.load('dice4.png').convert()
-dice5 = pygame.image.load('dice5.png').convert()
-dice6 = pygame.image.load('dice6.png').convert()
+dice1 = pygame.image.load('img/dice1.png').convert()
+dice2 = pygame.image.load('img/dice2.png').convert()
+dice3 = pygame.image.load('img/dice3.png').convert()
+dice4 = pygame.image.load('img/dice4.png').convert()
+dice5 = pygame.image.load('img/dice5.png').convert()
+dice6 = pygame.image.load('img/dice6.png').convert()
 # Positions of pawns
 a = (width * 0)
 s = (height * 0)
@@ -46,9 +47,23 @@ x4 = (933)
 y4 = (937)
 
 #positions van de tiles
-tiles = [(23,27), (170,27), (245,27), (325,27), (405,27), (520,270), (635,27), (710,270), (790,27), (870,27), (933,27), (933,175), (933,245), (933,325), (933,400), (933,520), (933,635), (933,710), (933,785), (933,865), (933,937), (870,937), (790,937), (710,937), (635,937), (520,937), (400,937), (320,937), (245,937), (165,937), (23,937), (23,170), (23,250), (23,325), (23,400), (23,525), (23,640), (23,715), (23,790), (23,870)]
+tiles = [(8,13), (170,27), (245,27), (325,27), (405,27), (520,270), (635,27), (710,270), (400,13), (400,13), (707,13), (933,175), (933,245), (933,325), (933,400), (933,520), (933,635), (933,710), (933,785), (933,865), (707,715), (870,937), (790,937), (710,937), (635,937), (520,937), (400,937), (320,937), (245,937), (165,937), (8,715), (23,170), (23,250), (23,325), (23,400), (23,525), (23,640), (0,715), (23,790), (23,870)]
+
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~CHANGED~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+
+#dice functie
+dice = randint(1,6)
 
 
+#tilevariable
+tile = 0
+
+#de variabele worden gelinked aan de tiles
+tile = tile + dice
+
+#pawnxy
+pawnxy = tiles[tile:tile]
+print(pawnxy)
 
 def survivor(x, y):
     screen.blit(survivor_logo,(x,y))
@@ -110,6 +125,9 @@ def game_intro(start_screen = True):
 
         pygame.display.update()
         clock.tick(60)
+def start():
+        screen.fill(white)
+        screen.blit(game_board,(a,s))
 
 #dices
 def dice():
@@ -117,6 +135,10 @@ def dice():
     d = random.randint(1,6)
     if d == 1:
         screen.blit(dice1, [1150, 200])
+        screen.blit(p1, tiles[1])
+        screen.blit(p2, tiles[11])
+        pygame.display.update
+        clock.tick(10)######YOLO MOFOOO WE BACK IN THIS BETCH!!!
     elif d == 2:
         screen.blit(dice2, [1150, 200])
     elif d == 3:
@@ -128,13 +150,9 @@ def dice():
     else:
         screen.blit(dice6, [1150, 200])
 #screen of the game
-def start():
-        screen.fill(white)
-        screen.blit(game_board,(a,s))
-        screen.blit(p1,tiles[0])
-        screen.blit(p2,tiles[10])
-        screen.blit(p3,tiles[30])
-        screen.blit(p4,tiles[20])
+
+
+
 def player_selection():
     start()
 
@@ -144,6 +162,8 @@ def player_selection():
                 pygame.quit()
                 quit()
             button("Roll Dice",(width/4*3),(height/4*0.2),150,50,green,brightgreen,dice)
+
+
         pygame.display.update()
         clock.tick(10)
 
