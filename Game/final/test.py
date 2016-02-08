@@ -106,25 +106,27 @@ def dice():
     d = random.randint(1,6)
     p1.tilesY = 20
     p1.tilesX = 0
-
+    p2.tilesY = 0
+    p2.tilesX = 400
     if d == 1:
         screen.blit(dice1, [1150, 200])
         p1.movePlayer(p1.tilesY + 50, p1.tilesX + 0)
+        p2.movePlayer(p1.tilesY + 0, p1.tilesX + 50)
     elif d == 2:
         screen.blit(dice2, [1150, 200])
         p1.movePlayer(p1.tilesY + 100, p1.tilesX + 0)
     elif d == 3:
         screen.blit(dice3, [1150, 200])
-        p1.movePlayer(p1.tilesY + 150, p1.tilesX + 0)
+        p1.movePlayer(p1.tilesY + 200, p1.tilesX + 0)
     elif d == 4:
         screen.blit(dice4, [1150, 200])
-        p1.movePlayer(p1.tilesY + 200, p1.tilesX + 0)
+        p1.movePlayer(p1.tilesY + 250, p1.tilesX + 0)
     elif d == 5:
         screen.blit(dice5, [1150, 200])
-        p1.movePlayer(p1.tilesY + 250, p1.tilesX + 0)
+        p1.movePlayer(p1.tilesY + 350, p1.tilesX + 0)
     else:
         screen.blit(dice6, [1150, 200])
-        p1.movePlayer(p1.tilesY + 300, p1.tilesX + 0)
+        p1.movePlayer(p1.tilesY + 425, p1.tilesX + 0)
 #screen of the game
 def start():
     screen.fill(white)
