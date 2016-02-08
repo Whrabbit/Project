@@ -166,6 +166,8 @@ def dice():
         screen.blit(dice5, [1150, 200])
     else:
         screen.blit(dice6, [1150, 200])
+
+
 #screen of the game
 def start():
         screen.fill(white)
